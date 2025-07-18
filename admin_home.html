@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="./img/Silk_Route_system_logo.jpg">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="./DataTables/datatables.min.css">
+  <!-- Bootstrap Icons -->
+  <link href="./Bootstrap_icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="Bootstrap/co.css" rel="stylesheet">
+
+ <style>
+   .swal2-popup.wide-swal-popup {
+            width: 600px !important;
+            max-width: 95% !important;
+            max-height: none !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            box-sizing: border-box !important;
+            overflow: visible !important;
+            /* Remove any scroll */
+        }
+
+        .swal2-html-container {
+            overflow: visible !important;
+            /* No scrolling inside text container */
+        }
+
+        .swal2-confirm.custom-ok-btn {
+            background-color: #28a745 !important;
+            color: white !important;
+            font-size: 15px !important;
+            padding: 6px 20px !important;
+            border-radius: 25px !important;
+        }
+
+        .swal2-confirm.custom-ok-btn:hover {
+            background-color: #218838 !important;
+        }
+ </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="fixed-top">
+        <div class="bg_color row p-3 align-items-center">
+          <div class="col d-flex justify-content-start align-items-center">
+            <a href="admin_home.html" class="link_color link-offset-2 link-underline link-underline-opacity-0">
+              <img src="./img/systemlogo.jpg" alt="Logo" class="logo me-2">
+            </a>
+          </div>
+          <div class="col d-flex justify-content-end align-items-center nav-right">
+            <div class="d-flex align-items-center text-right">
+              <div class="datetime text-uppercase text_ll text-center">
+                <h5 id="time">3:35:55 PM</h5>
+                <h5 id="date">2025.07.16</h5>
+              </div>
+              <div class="vl mx-3 d-inline-block" style="border-left: 2px solid rgba(0, 0, 80, 0.8); height: 50px;"></div>
+              <h4 class="text_ll">Administrator</h4>
+              <div class="vl mx-3 d-inline-block" style="border-left: 2px solid rgba(0, 0, 80, 0.8); height: 50px;"></div>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="./img/profpic.png" alt="Profile Picture" style="opacity: 0.8;">
+              <a href="index.html" id="logout-link" class="btn btn_log_out" data-bs-toggle="tooltip" data-bs-placement="right" title="Log out">
+                <img src="./img/out.png" alt="Log Out" style="opacity: 0.8;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br>
+    <main class="content d-flex justify-content-center align-items-center">
+      <div class="container row justify-content-center">
+        <!-- Start individual dashboard links -->
+        <div class="col-2 m-2">
+          <a href="ibm_system_form.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Add_Reservation.png" alt="Add Reservation" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Add <br> Reservation</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="passenger_update.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Pending Payment_W.png" alt="Pending Payment" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Pending <br> Payment</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="payment_details.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Confirm Reservation_W.png" alt="Reservation Confirmed" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Reservation <br> Confirmed</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="visitor_detailes.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Visitors details_W.png" alt="Visitors' Details" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Visitors' <br> Details</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="Immigration_Emigration_Report.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Immi_Emi_Report.png" alt="Immigration Emigration Report" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Immigration <br> Emigration Report</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="create_edit_user.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Add User_W.png" alt="Create / Edit User" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Create / <br> Edit User</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="Search.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Search_W.png" alt="Search" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Search <br> <br></p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="delete_confirm_reservtion.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Del_Con_Res.png" alt="Delete Confirm Reservation" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Delete Confirm <br> Reservation</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="delete_pandinPyemnts_.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Del Res_W.png" alt="Delete Pending Payments" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Delete Pending <br> Payments</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-2 m-2">
+          <a href="main_report.html" class="d-flex justify-content-center link_d">
+            <div class="link_box d-flex flex-column justify-content-center align-items-center">
+              <img src="./img/icon/Report.png" alt="Report Details" class="img_dashbord m-4">
+              <p class="para_text_ py-2">Report <br> Details b</p>
+            </div>
+          </a>
+        </div>
+        <!-- End dashboard links -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="bg_color text-center" style="font-weight: normal;">
+        Designed &amp; Developed by the AASL Development Team.
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./bootstrap/jquery-3.7.1.min.js"></script>
+  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./DataTables/datatables.min.js"></script>
+  <script src="sweetalert2@11.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Initialize DataTables example table if needed
+      if ($('#example').length) {
+        $('#example').DataTable();
+      }
+    });
+
+    // Logout confirmation
+    document.getElementById('logout-link').addEventListener('click', function (event) {
+      if (!confirm('Are you sure you want to log out?')) {
+        event.preventDefault();
+      }
+    });
+
+    // Update time and date
+    function updateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', { hour12: true });
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const date = `${year}.${month}.${day}`;
+
+      document.getElementById("time").innerHTML = time;
+      document.getElementById("date").innerHTML = date;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+
+</html>

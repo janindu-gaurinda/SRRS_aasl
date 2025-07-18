@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Details</title>
+    <link rel="icon" type="image/x-icon" href="./img/Silk_Route_system_logo.jpg">
+     <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" href="./DataTables/datatables.min.css">
+        <!-- Bootstrap Icons -->
+        <link href="./Bootstrap_icons/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="Bootstrap/co.css" rel="stylesheet">
+
+        <style>
+            .sidenav {
+                height: 100%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                /* background-color: #111; */
+                overflow-x: hidden;
+                /* padding-top: 20px; */
+            }
+        </style>
+</head>
+
+<body>
+    <div class="">
+        <div class="row">
+            <div class="col-3">
+                <div class="sidenav m-5">
+                    <div class="list-group">
+                        <a href="payment_details.html" class="list-group-item list-group-item-action active">Go Back</a>
+                        <a href="#FlightInformation" class="list-group-item list-group-item-action">Flight
+                            Information</a>
+                        <a href="#PackageDetails" class="list-group-item list-group-item-action">Package Details</a>
+                        <a href="#PassengerDetails" class="list-group-item list-group-item-action">Passenger Details</a>
+                        <a href="#PaymentDetail" class="list-group-item list-group-item-action">Payment Detail</a>
+                        <a href="#ContactDetailsoftheLeadPassenger"
+                            class="list-group-item list-group-item-action">Contact Details of the Lead Passenger</a>
+                        <a href="#LocalContactPerson" class="list-group-item list-group-item-action">Local Contact
+                            Person</a>
+                        <a href="#DetailsofVisitors" class="list-group-item list-group-item-action">Details of
+                            Visitors</a>
+
+                        <br>
+
+                        <!-- Form for submitting CIP ID -->
+                        <form name="pdf" target="_blank">
+                            <input type="submit" value="Generate PDF"
+                                class=" btn list-group-item list-group-item-action active" name="Download PDF">
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-6 m-5">
+    <table class="table table-bordered border-primary text-center">
+        <thead>
+            <tr>
+                <th colspan="6" scope="col">Referral Number : REF_20250718_P001</th>
+            </tr>
+            <tr>
+                <th colspan="6" scope="col">Total payable amount : LKR 100,000.00</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="FlightInformation">Flight Information</th>
+            </tr>
+            <tr>
+                <th scope="row">Arrv Flight No</th>
+                <th scope="row">Arrival Date</th>
+                <th scope="row">Arrival Time</th>
+                <th scope="row">Dept Flight No</th>
+                <th scope="row">Departure Date</th>
+                <th scope="row">Departure Time</th>
+            </tr>
+            <tr>
+                <td> UL-300</td>
+                <td> 2025/07/22</td>
+                <td> 08:45 AM</td>
+                <td> UL-301</td>
+                <td> 2025/07/29</td>
+                <td> 10:30 PM</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="3">Number of passengers</th>
+                <td colspan="3"> 3</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="3" id="PackageDetails">Package Details</th>
+                <td colspan="3">Business Package - Gold Service</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="PassengerDetails">Passenger Detail</th>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Name</th>
+                <th scope="row" colspan="2">Passport No</th>
+                <th scope="row" colspan="2">Refreshment</th>
+            </tr>
+            <tr>
+                <td colspan="2"> Mr. John Smith</td>
+                <td colspan="2"> N1234567</td>
+                <td colspan="2"> Vegetarian Meal</td>
+            </tr>
+            <tr>
+                <td colspan="2"> Mrs. Emily Smith</td>
+                <td colspan="2"> N7654321</td>
+                <td colspan="2"> Vegan Meal</td>
+            </tr>
+            <tr>
+                <td colspan="2"> Miss. Anna Smith</td>
+                <td colspan="2"> N9988776</td>
+                <td colspan="2"> Kid's Meal</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="3" id="PaymentDetail">Payment Detail</th>
+                <td colspan="3">LKR 100,000.00 (Paid in Full)</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="ContactDetailsoftheLeadPassenger">Contact Details of the Lead Passenger</th>
+            </tr>
+            <tr>
+                <th colspan="3" scope="row">Name</th>
+                <th colspan="2" scope="row">Telephone</th>
+                <th colspan="3" scope="row">E-mail</th>
+            </tr>
+            <tr>
+                <td colspan="3"> Mr. John Smith</td>
+                <td colspan="2"> +94 77 123 4567</td>
+                <td colspan="3"> johnsmith@example.com</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="LocalContactPerson">Local Contact Person</th>
+            </tr>
+            <tr>
+                <th colspan="3" scope="row">Name</th>
+                <th colspan="2" scope="row">Telephone</th>
+                <th colspan="3" scope="row">Organisation</th>
+            </tr>
+            <tr>
+                <td colspan="3"> Mr. Nimal Perera</td>
+                <td colspan="2"> +94 71 654 3210</td>
+                <td colspan="3"> Serendib Travel Pvt Ltd</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Organisation</th>
+                <td colspan="4">Serendib Travel Pvt Ltd</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="DetailsofVisitors">Details of Visitors</th>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Name</th>
+                <th scope="row" colspan="2">NIC</th>
+                <th scope="row" colspan="2">Vehicle No</th>
+            </tr>
+            <tr>
+                <td colspan="2"> Mr. Ruwan Silva</td>
+                <td colspan="2"> 882347654V</td>
+                <td colspan="2"> WP CAE-9876</td>
+            </tr>
+            <tr>
+                <td colspan="2"> Ms. Kamala Perera</td>
+                <td colspan="2"> 973421098V</td>
+                <td colspan="2"> WP KQ-4563</td>
+            </tr>
+            <tr>
+                <td colspan="2"> Mr. Lahiru Fernando</td>
+                <td colspan="2"> 851234567V</td>
+                <td colspan="2"> WP BAA-2341</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-success text-decoration-underline text-uppercase" colspan="6"
+                    id="Comments">Comment</th>
+            </tr>
+            <tr>
+                <td colspan="6">Customer requested wheelchair assistance for arrival and departure. VIP lounge access confirmed.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+        </div>
+        <!-- Include jQuery and then Bootstrap Bundle JS (includes Popper.js) -->
+        <!-- Scripts -->
+  <script src="./bootstrap/jquery-3.7.1.min.js"></script>
+  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./DataTables/datatables.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Initialize DataTables example table if needed
+      if ($('#example').length) {
+        $('#example').DataTable();
+      }
+    });
+
+    // Logout confirmation
+    document.getElementById('logout-link').addEventListener('click', function (event) {
+      if (!confirm('Are you sure you want to log out?')) {
+        event.preventDefault();
+      }
+    });
+
+    // Update time and date
+    function updateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', { hour12: true });
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const date = `${year}.${month}.${day}`;
+
+      document.getElementById("time").innerHTML = time;
+      document.getElementById("date").innerHTML = date;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+
+</html>
+
+?>

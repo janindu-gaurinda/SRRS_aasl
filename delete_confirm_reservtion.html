@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirm Reservtion</title>
+    <link rel="icon" type="image/x-icon" href="./img/Silk_Route_system_logo.jpg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+    <!-- Bootstrap Icons -->
+    <link href="./Bootstrap_icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="Bootstrap/co.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('./img/tb1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .bg_color_body {
+            background-color: #cff4fc;
+        }
+
+        .blurred-background {
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .table-bg {
+            background-color: #e5e5e5 !important;
+            /* background-color: rgba(255, 255, 255, 0.0) !important; */
+            border: 1px solid black !important;
+            /* Outer border */
+            border-collapse: collapse;
+            /* Ensures borders don't double up */
+        }
+
+        .table-bg th,
+        .table-bg td {
+            border: 1px solid black !important;
+            /* Adds border to table header and body cells */
+        }
+
+        .table-bg thead th {
+            border-bottom: 1px solid black !important;
+            /* Specific styling for the header row */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="">
+        <div class="fixed-top">
+            <div class="bg_color row p-3 align-items-center">
+                <div class="col d-flex justify-content-start align-items-center">
+                    <a href="admin_home.html" class="link_color link-offset-2 link-underline link-underline-opacity-0">
+                        <img src="./img/systemlogo.jpg" alt="Logo" class="logo me-2">
+                    </a>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center nav-right">
+                    <div class="d-flex align-items-center text-right">
+                        <div class="datetime text-uppercase text_ll text-center">
+                            <h5 id="time">3:35:55 PM</h5>
+                            <h5 id="date">2025.07.16</h5>
+                        </div>
+                        <div class="vl mx-3 d-inline-block"
+                            style="border-left: 2px solid rgba(0, 0, 80, 0.8); height: 50px;"></div>
+                        <h4 class="text_ll">Administrator</h4>
+                        <div class="vl mx-3 d-inline-block"
+                            style="border-left: 2px solid rgba(0, 0, 80, 0.8); height: 50px;"></div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./img/profpic.png" alt="Profile Picture" style="opacity: 0.8;">
+                        <a href="index.html" id="logout-link" class="btn btn_log_out" data-bs-toggle="tooltip"
+                            data-bs-placement="right" title="Log out">
+                            <img src="./img/out.png" alt="Log Out" style="opacity: 0.8;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1 class="display-6"
+        style="padding-top:90px; padding-bottom:1px; padding-left:70px; font-weight: bold; color:aliceblue;">Delete
+        Confirm Reservtion</h1>
+
+    <div class="d-flex justify-content-center mt-3">
+
+    </div>
+
+    <div class="container py-4">
+        <div class="blurred-background">
+            <form id="add_form" action="" method="GET">
+                <div class="border border-dark rounded-top m-3">
+                    <h6 class="bg-success p-2 text-success rounded-top" style="--bs-bg-opacity: .3;">Delete Confirm
+                        Reservtion</h6>
+                    <div class="container-fluid">
+                        <div class="row m-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <label for="fromSelect_Date">From:</label>
+                                    <input type="date" class="form-control" id="fromSelect_Date" name="from_date"
+                                        value="" placeholder="Select Date">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <label for="toSelect_Date">To:</label>
+                                    <input type="date" required class="form-control" id="toSelect_Date" name="to_date"
+                                        value="" placeholder="Select Date">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="form-group">
+                                    <label for="toSelect_Date">Type:</label>
+                                    <select name="type" class="form-select" id="typeSelect"
+                                        aria-label="Default select example">
+                                        <option value="All">All</option>
+                                        <option value="Arrival">Arrival</option>
+                                        <option value="Departure">Departure</option>
+                                        <option value="Transit">Transit</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 d-flex align-items-end">
+                                <button class="btn btn-success w-100" id="select_date" name="submit"
+                                    type="submit">VIEW</button>
+                                <!-- <button class="btn btn-secondary w-100 mt-2" id="reset_button" type="reset">RESET</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+            <!-- Display the results in a table -->
+            <table id="example" class="table-bg table table-bordered mt-4">
+                <thead class="text-center">
+                    <tr>
+                        <th class="text-center align-middle">No</th>
+                        <th class="text-center align-middle">Updated by</th>
+                        <th class="text-center align-middle">Package</th>
+                        <th class="text-center align-middle">Reference No</th>
+                        <th class="text-center align-middle">Bank Ref No.</th>
+                        <th class="text-center align-middle">Date</th>
+                        <th class="text-center align-middle">Amount</th>
+                        <th class="text-center align-middle">No of Pax</th>
+                        <th class="text-center align-middle">Accessed time</th>
+                        <th class="text-center align-middle">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td class="text-center align-middle">1</td>
+                        <td class="text-center align-middle">admin01</td>
+                        <td class="text-center align-middle">Gold</td>
+                        <td class="text-center align-middle">REF001</td>
+                        <td class="text-center align-middle">BNK1001</td>
+                        <td class="text-center align-middle">
+                            <p>Arr: 2025-08-01</p>
+                            <p>Dep: 2025-08-05</p>
+                        </td>
+                        <td class="text-center align-middle">USD 1,200.00</td>
+                        <td class="text-center align-middle">2</td>
+                        <td class="text-center align-middle">2025-07-18 09:30:10</td>
+                        <td class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <form action="#" onsubmit="return confirmDeletion('REF001');">
+                                    <button class="btn btn-danger text-black" name="Delete" type="submit"
+                                        data-bs-toggle="tooltip" data-bs-placement="left"
+                                        data-bs-title="Delete Reservation">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center align-middle">2</td>
+                        <td class="text-center align-middle">staff02</td>
+                        <td class="text-center align-middle">Silver</td>
+                        <td class="text-center align-middle">REF002</td>
+                        <td class="text-center align-middle">BNK1002</td>
+                        <td class="text-center align-middle">
+                            <p>Arr: 2025-08-10</p>
+                            <p>Dep: 2025-08-12</p>
+                        </td>
+                        <td class="text-center align-middle">USD 950.00</td>
+                        <td class="text-center align-middle">1</td>
+                        <td class="text-center align-middle">2025-07-18 10:45:00</td>
+                        <td class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <form action="#" onsubmit="return confirmDeletion('REF002');">
+                                    <button class="btn btn-danger text-black" name="Delete" type="submit"
+                                        data-bs-toggle="tooltip" data-bs-placement="left"
+                                        data-bs-title="Delete Reservation">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center align-middle">3</td>
+                        <td class="text-center align-middle">admin03</td>
+                        <td class="text-center align-middle">Platinum</td>
+                        <td class="text-center align-middle">REF003</td>
+                        <td class="text-center align-middle">BNK1003</td>
+                        <td class="text-center align-middle">
+                            <p>Arr: 2025-09-01</p>
+                            <p>Dep: 2025-09-05</p>
+                        </td>
+                        <td class="text-center align-middle">USD 1,500.00</td>
+                        <td class="text-center align-middle">4</td>
+                        <td class="text-center align-middle">2025-07-18 11:15:45</td>
+                        <td class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <form action="#" onsubmit="return confirmDeletion('REF003');">
+                                    <button class="btn btn-danger text-black" name="Delete" type="submit"
+                                        data-bs-toggle="tooltip" data-bs-placement="left"
+                                        data-bs-title="Delete Reservation">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <script>
+                function confirmDeletion(Ref_no) {
+                    return confirm('Are you sure you want to delete this reservation?');
+                }
+            </script>
+
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="bg_color text-center" style="font-weight: normal;">
+            Designed &amp; Developed by the AASL Development Team.
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="./bootstrap/jquery-3.7.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./DataTables/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Initialize DataTables example table if needed
+            if ($('#example').length) {
+                $('#example').DataTable();
+            }
+        });
+
+        // Logout confirmation
+        document.getElementById('logout-link').addEventListener('click', function (event) {
+            if (!confirm('Are you sure you want to log out?')) {
+                event.preventDefault();
+            }
+        });
+
+        // Update time and date
+        function updateTime() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { hour12: true });
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const date = `${year}.${month}.${day}`;
+
+            document.getElementById("time").innerHTML = time;
+            document.getElementById("date").innerHTML = date;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+</body>
+
+</html>

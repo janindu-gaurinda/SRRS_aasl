@@ -1,0 +1,238 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="icon" type="image/x-icon" href="./img/Silk_Route_system_logo.jpg">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+    <!-- datatables -->
+    <!-- <link rel="stylesheet" href="./DataTables/datatables.min.css"> -->
+    <!-- bootstrap-icons -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+    <!-- Include additional CSS files if any extensions are used -->
+
+    <link href="./Bootstrap_icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Include additional CSS files if any extensions are used -->
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            background: url('./img/loginback.jpg');
+            background-size: cover;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Align items to the left */
+            padding-right: 100px;
+            /* Adjust padding as needed */
+        }
+
+        .font_size {
+            font-size: 80px;
+        }
+
+        .btn_bg_color {
+            background-color: #131523 !important;
+            color: white !important;
+        }
+
+        .btn_bg_color:hover {
+            background-color: white;
+            color: #131523;
+        }
+
+        .bg_color {
+            background-color: #ff9b03 !important;
+        }
+
+        .form-control {
+            height: 60px;
+            /* Increase input field height */
+            font-size: 20px;
+            /* Increase input text size */
+        }
+         .swal2-popup.wide-swal-popup {
+            width: 600px !important;
+            max-width: 95% !important;
+            max-height: none !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            box-sizing: border-box !important;
+            overflow: visible !important;
+            /* Remove any scroll */
+        }
+
+        .swal2-html-container {
+            overflow: visible !important;
+            /* No scrolling inside text container */
+        }
+
+        .swal2-confirm.custom-ok-btn {
+            background-color: #28a745 !important;
+            color: white !important;
+            font-size: 15px !important;
+            padding: 6px 20px !important;
+            border-radius: 25px !important;
+        }
+
+        .swal2-confirm.custom-ok-btn:hover {
+            background-color: #218838 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+        </div>
+
+        <main class="content">
+            <div class="col-4">
+                <div class="text-start p-5"> <!-- Align text to the start (left) -->
+                    <h1 class="text-white font_size mb-5" style="padding-left:80px;">Login</h1>
+
+                    <form >
+                        <div class="mb-4">
+                            <input type="text" required="" class="form-control border border-0 rounded inpu_pading p-3"
+                                id="username" name="username" placeholder="username" aria-label="username"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" required=""
+                                class="form-control border border-0 rounded inpu_pading p-3" id="password"
+                                name="password" autocomplete="off" placeholder="password" aria-label="password"
+                                aria-describedby="addon-wrapping">
+                            <div class="text-white m-2" style="padding-left:120px;">
+                                <input type="checkbox" id="showPassword" class="form-check-input border border-black"
+                                    onclick="myFunction()"> Show Password
+                            </div>
+                        </div>
+                        <!-- <button type="submit" name="submit" class="btn btn_bg_color col-6 rounded inpu_pading_btn"
+                            style="margin-left: 100px;"><span class="fw-bold">Submit</span></button> -->
+<div class="d-flex flex-column align-items-center justify-content-center">
+								                            <a href="admin_home.html" class="btn btn_bg_color col-6 rounded inpu_pading_btn"    style="margin-left: 100px;"><span class="fw-bold">Submit</span></a>
+									<small class="text-muted mt-2" style="font-size: 0.8rem;">
+										Simply click the Submit button — no need to fill in any details.
+									</small>
+								</div>                       
+					   <!-- <br>
+                        <div class="mt-2 text-white" style="padding-left: 40px;">
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <!-- footer start -->
+            <div class="bg_color text-center" style="font-weight: normal;">
+                Designed &amp; Developed by the AASL Development Team.
+            </div>
+            <!-- footer end -->
+        </footer>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        window.onload = function () {
+            const alert = document.getElementById('alert');
+            if (alert) {
+                setTimeout(() => {
+                    var alertInstance = new bootstrap.Alert(alert);
+                    alertInstance.close();
+                }, 5000); // 5000 milliseconds = 5 seconds
+            }
+        };
+    </script>
+    <!-- bootstrap -->
+    <script src="./bootstrap/jquery-3.7.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./DataTables/datatables.min.js"></script>
+
+    <script src="./Bootstrap/jquery-3.7.1.min.js"></script>
+    <script src="./Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="sweetalert2@11.js"></script>
+    <!-- Initialize DataTables -->
+    <!-- <script src="./DataTables/datatables.min.css"></script> -->
+    <!-- <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script> -->
+<script>
+  if (!sessionStorage.getItem('welcomeShown')) {
+    Swal.fire({
+      title: '<span style="font-size: 22px; font-weight: bold;">✈️ AASL Silk Route Reservation System</span>',
+      html: `
+        <p style="text-align: left; font-size: 14px; margin-top: 15px;">
+          The <strong>Silk Route Reservation System</strong> is a web-based solution developed for staff at <strong>Bandaranaike International Airport (BIA)</strong> to efficiently manage passenger lounge reservations at the Silk Route Lounge.
+        </p>
+        
+        <p style="text-align: left; font-size: 14px;">
+          ✨ <strong>Main Features:</strong><br>
+          • Manual and online reservation handling with full CRUD functionality<br>
+          • Real-time reception counter view for passenger check-ins<br>
+          • Role-based access control for staff<br>
+          • Filtered report generation and analytics<br>
+          • Visitor management and tracking
+        </p>
+
+        <p style="text-align: left; font-size: 14px;">
+          👥 <strong>User Roles:</strong><br>
+          • <strong>User</strong>: Add/edit/delete reservations, generate reports<br>
+          • <strong>Admin</strong>: Full system access, including user management and activity history
+        </p>
+
+        <p style="text-align: left; font-size: 14px;">
+          🛠️ <strong>Technology Stack:</strong><br>
+          PHP (backend), MySQL (database), Bootstrap (UI), DataTables, Parsley.js (form validation)
+        </p>
+
+        <p style="text-align: left; font-size: 14px; color: red;">
+          ⚠️ Note: This system is optimized for desktop use only (not mobile responsive).
+        </p>
+        <p style="text-align: center; font-size: 14px;">
+            👨‍💻 <strong>Developed by:</strong> Janindu Gaurinda (Intern, AASL)
+          </p>
+          <p style="text-align: center; font-size: 14px; color: red;">
+            ⚠️ Backend source code and database access are not publicly shared.
+          </p>
+          <p style="text-align: center; font-size: 14px;">🙏 Thank you for visiting!</p>
+      `,
+      icon: 'info',
+      confirmButtonText: 'Next',
+      customClass: {
+        popup: 'wide-swal-popup',
+        confirmButton: 'custom-ok-btn'
+      }
+    });
+
+    sessionStorage.setItem('welcomeShown', 'true');
+  }
+</script>
+
+</body>
+
+</html>
